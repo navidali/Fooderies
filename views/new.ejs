@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+<div class="container" style="margin-top: 20px;">
+	<h1 class="display-4" style="margin-bottom: 10px;">Submit New Place</h1>
+	<form class="ui form" action="/places" method="POST">
+	  <div class="field">
+		<label>Name</label>
+		<input type="text" name="name" placeholder="Name" required>
+	  </div>
+	  <div class="field">
+		<label>Image Url</label>
+		<input tpype="text" name="image" placeholder="Image Url" required>
+	  </div>
+	  <div class="field">
+		<label>Description</label>
+		<input type="text" name="description" placeholder="How was it?" required>
+	  </div>
+	  <a href="/places" class="ui button">Back</a>
+	  <button class="ui button" type="submit">Submit</button>
+	</form>
+</div>
+
+
+<%- include("partials/footer") %>

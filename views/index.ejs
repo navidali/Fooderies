@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+<div class="jumbotron" style="background-color: purple; color: white; opacity: .9;">
+	<div class="container">
+		<h1 class="display-4">Welcome To Fooderies</h1>
+		  <p class="lead">Here's A List Of All Rated Food Places By Our Users</p>
+		  <hr class="my-4">
+		  <p>Click On Any Image To View More</p>
+		  <p class="lead">
+			<a class="btn btn-primary btn-lg" href="/places/new" role="button">Add New Place</a>
+		  </p>	
+	</div>
+</div>
+<div class="ui container" style="text-align: center; margin-top: 30px;">
+	<div class="row" style="display:flex; flex-wrap: wrap;">
+		<% places.forEach(function(place){ %>
+		<div class="col-xs-12 col-md-3 col-sm-6">
+			<div class="ui card">
+				<div class="content">
+					<!-- place user name here -->
+					<div class="right floated meta">14h</div>
+				</div>
+				<div class="image">
+					<a href="/places/<%= place._id %>">
+						<img src="<%= place.image %>" height=205px width=255px>
+					</a>
+				</div>
+				<div class="content">
+					<div class="header"><%= place.name %></div>
+					<div class="description"><%= place.description %></div>
+					<i class="comment icon"></i>
+					<!-- number of comments for this post -->
+					3 comments
+					</div>
+				<div class="extra content">
+					<div class="ui large transparent left icon input">
+						<input type="text" placeholder="Add Comment...">
+					</div>
+				</div>
+			</div>	
+		</div>
+		<% }); %>	 	
+	</div>
+</div>
+
+<%- include("partials/footer") %>

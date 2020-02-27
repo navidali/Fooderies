@@ -1,0 +1,42 @@
+<%- include("partials/header") %>
+
+<div class="col-xs-12 col-md-6 col-sm-10" style="margin:auto">
+			<div class="ui card" style="margin-top: 5%; height: 90%; width: 100%;">
+				<div class="content">
+					<!-- place user name here -->
+					<div>
+						<a href="/places">
+							<i class="arrow left link icon meta" style="font-size: 15px; width: 50px;"> back</i>
+						</a>
+					</div>
+					<div class="right floated meta">14h</div>
+				</div>
+				<div class="image">
+					<!-- allow clicking on the image to go to the show page -->
+					<img src="<%= place.image %>">
+				</div>
+				<div class="content">
+					<div class="ui vertical right floated meta">
+						<a href="/places/<%= place._id %>/edit">
+							<i class="edit icon"></i>
+						</a>
+						<form id="form-id" action="/places/<%= place._id %>?_method=DELETE" method="POST">
+							<a onclick="document.getElementById('form-id').submit();">
+								<i class="trash alternate outline icon link"></i>
+							</a>
+						</form>
+					</div>
+					<div class="content">
+						<div class="header"><h2><%= place.name %></h2></div>
+						<div class="description"><%= place.description %></div>
+					</div>
+				<div class="extra content">
+					<div class="ui large transparent left icon input">
+						<input type="text" placeholder="Add Comment..." >
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<%- include("partials/footer") %>
